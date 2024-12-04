@@ -61,19 +61,3 @@ dialog#lightbox[open].sortie {
  opacity: 0;
  }
 }
-
-dialog#lightbox[open].entree {
-    animation: entree 1s;
-}
-
-@keyframes entree {
-    0% {
-        opacity: 0;
-    }
-    70% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
-}
