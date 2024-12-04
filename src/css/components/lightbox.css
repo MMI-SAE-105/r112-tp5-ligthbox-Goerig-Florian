@@ -10,8 +10,8 @@ dialog#lightbox {
 }
 
 ::backdrop {
-    background-color: rgb(89, 0, 255);
-    opacity:0.8;
+    background-color: rgb(0, 153, 255);
+    opacity:0;
     }
 
     #ligtbox::before {
@@ -47,8 +47,8 @@ dialog#lightbox[open] {
     }
 }
 
-dialog#lightbox[open] {}
         
+
 dialog#lightbox[open].sortie {
  animation: sortie 1s;
  }
@@ -63,12 +63,15 @@ dialog#lightbox[open].sortie {
 }
 
 dialog#lightbox[open].entree {
-    animation: entree 2s;
+    animation: entree 1s;
 }
 
 @keyframes entree {
     0% {
         opacity: 0;
+    }
+    70% {
+        opacity: 1;
     }
     100% {
         opacity: 1;
