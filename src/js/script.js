@@ -1,11 +1,21 @@
 // *** LIGHTBOX ***
+const lightBox = document.querySelector("#lightbox");
+const lightBoxImg = lightBox.querySelector("img");
 
-const LightboxImg = document.queryselector('#lightbox img');
-const lightbox = document.queryselector('#lightbox');
-document.querySelectorAll('data-full-img]').forEach((imgThumb)=>{
-    imgThumb.addEventListener('click',(evt)=> {
-        LightboxImg.src = imgThumb.dataset.fullImg;
-        lightbox.schowModal()   });
+document.body.addEventListener("click", (evt)=> {
+    console.log(evt.target);
+    
+    if (evt.target.matches("[data-full-img]")) {
+        lightBoxImg.src = evt.target.dataset.fullImg;
+        lightBox.showModal();}
+    });
+
+    
+ lightBox.addEventListener("click", (evt) => {
+    lightBox.classList.add("sortie");
+    lightBox.addEventListener(
+        "animationend", () => {
+        lightBox.classList.remove("sortie");
+        lightBox.close();
+    }, {once: true});
 });
-
-lightbox.addEventListener('click', () => lightbox.close());
